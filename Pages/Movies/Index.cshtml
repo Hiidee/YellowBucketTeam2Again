@@ -1,0 +1,78 @@
+﻿@page
+@model YellowBucket.Pages.Movies.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Movie[0].Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Movie[0].RatingId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Movie[0].Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Movie[0].Length)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Movie[0].GenreId)
+            </th>
+            <th>
+                DVD / BluRay
+            </th>            
+            <th>
+                @Html.DisplayNameFor(model => model.Movie[0].Cover_Photo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Movie[0].Release_Date)
+            </th>            
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Movie) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rating.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Length)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Genre.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Is_Dvd) /  @Html.DisplayFor(modelItem => item.Is_BluRay)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cover_Photo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Release_Date)
+            </td>            
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.MovieId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.MovieId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.MovieId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

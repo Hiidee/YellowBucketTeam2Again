@@ -1,0 +1,90 @@
+﻿@page "{id:int}"
+@model YellowBucket.Pages.Movies.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Movie</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Movie.MovieId" />
+            <div class="form-group">
+                <label asp-for="Movie.Title" class="control-label"></label>
+                <input asp-for="Movie.Title" class="form-control" />
+                <span asp-validation-for="Movie.Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Movie.RatingId" class="control-label"></label>
+                <input asp-for="Movie.RatingId" class="form-control" />
+                <span asp-validation-for="Movie.RatingId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Movie.Description" class="control-label"></label>
+                <input asp-for="Movie.Description" class="form-control" />
+                <span asp-validation-for="Movie.Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Movie.Length" class="control-label"></label>
+                <input asp-for="Movie.Length" class="form-control" />
+                <span asp-validation-for="Movie.Length" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Movie.GenreId" class="control-label"></label>
+                <input asp-for="Movie.GenreId" class="form-control" />
+                <span asp-validation-for="Movie.GenreId" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Movie.Is_Dvd" /> @Html.DisplayNameFor(model => model.Movie.Is_Dvd)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Movie.Is_BluRay" /> @Html.DisplayNameFor(model => model.Movie.Is_BluRay)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="Movie.Cover_Photo" class="control-label"></label>
+                <input asp-for="Movie.Cover_Photo" class="form-control" />
+                <span asp-validation-for="Movie.Cover_Photo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Movie.Release_Date" class="control-label"></label>
+                <input asp-for="Movie.Release_Date" class="form-control" />
+                <span asp-validation-for="Movie.Release_Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Movie.Created_Date" class="control-label"></label>
+                <input asp-for="Movie.Created_Date" class="form-control" />
+                <span asp-validation-for="Movie.Created_Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Movie.Updated_Date" class="control-label"></label>
+                <input asp-for="Movie.Updated_Date" class="form-control" />
+                <span asp-validation-for="Movie.Updated_Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Movie.Deleted_Date" class="control-label"></label>
+                <input asp-for="Movie.Deleted_Date" class="form-control" />
+                <span asp-validation-for="Movie.Deleted_Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
