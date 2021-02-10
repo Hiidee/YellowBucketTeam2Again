@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-//F
+//YellowBucket
 namespace YellowBucket.Models
 {
     public class Genre
