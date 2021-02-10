@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-//heo this is a test
+//lmfao look at this dude tryinna get github working
 namespace YellowBucket.Models
 {
     public class Genre
