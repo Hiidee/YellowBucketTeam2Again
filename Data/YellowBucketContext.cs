@@ -19,5 +19,7 @@ namespace YellowBucket.Data
         public DbSet<YellowBucket.Models.Genre> Genre { get; set; }
 
         public DbSet<YellowBucket.Models.Rating> Rating { get; set; }
+
+        public DbSet<YellowBucket.Models.Review> Review { get; set; }
     }
 }

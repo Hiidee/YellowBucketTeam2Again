@@ -16,7 +16,6 @@ namespace YellowBucket.Models
         public int RatingId { get; set; }
         public Rating Rating { get; set; }
 
-
         [Column(TypeName = "varchar(4096)")]
         public string Description { get; set; }
 
@@ -27,6 +26,8 @@ namespace YellowBucket.Models
         public int GenreId { get; set; }
         public Genre Genre { get; set; }
 
+        [Display(Name = "Review")]
+        public Review Review { get; set; }
 
         [Display(Name = "On DVD")]
         public bool Is_Dvd { get; set; }

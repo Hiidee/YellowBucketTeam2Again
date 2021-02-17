@@ -28,19 +28,18 @@ namespace YellowBucket.Pages.Movies
 
         public List<SelectListItem> GenreItems { set; get; }
 
-        // Ratings Definitions
-        [BindProperty]
-        public int SelectedRatingId { set; get; }
+        //[BindProperty]
+        //public int SelectReviewId { get; set; }
 
-        public List<SelectListItem> RatingItems { set; get; }
-
+        //public List<SelectListItem> ReviewItems { get; set; }
 
         public async Task OnGetAsync()
         {
 
             Movie = await _context.Movie
                 .Include(m => m.Rating)
-                .Include(movie => movie.Genre)                
+                .Include(movie => movie.Genre)
+                .Include(movie => movie.Review)
                 .ToListAsync();
 
             int i = 1;

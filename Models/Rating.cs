@@ -13,7 +13,7 @@ namespace YellowBucket.Models
         public string Name { get; set; }
 
         #nullable enable
-        [Column(TypeName = "varchar(256)")]
+        [Column(TypeName = "varchar(4096)")]
         public string? Description { get; set; }
         #nullable disable
 

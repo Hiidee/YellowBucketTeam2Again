@@ -38,6 +38,11 @@ namespace YellowBucket.Pages.Movies
 
         public List<SelectListItem> RatingItems { set; get; }
 
+        //Reviews Definitions
+        [BindProperty]
+        public int SelectedReviewId { get; set; }
+
+        public List<SelectListItem> ReviewItems { get; set; }
 
         private IWebHostEnvironment _environment;
         //public CreateModel(IWebHostEnvironment environment)
@@ -68,6 +73,15 @@ namespace YellowBucket.Pages.Movies
                                 })
                                .ToList();
 
+            // Get the List of Reviews from the Review Model ////////
+            ReviewItems = _context.Review
+                                .Select(a => new SelectListItem
+                                 {
+                                    Value = a.ReviewId.ToString(),
+                                    Text = a.Name
+                                 })
+                                .ToList();
+
             return Page();
         }
       
@@ -91,7 +105,7 @@ namespace YellowBucket.Pages.Movies
                 await UploadedImage.CopyToAsync(fileStream);
             }
 
-            // Set the GenreId and RatingId to the input values
+            // Set the GenreId and RatingId //and ReviewId// to the input values
             Movie.Cover_Photo = UploadedImage.FileName;
             Movie.GenreId = this.SelectedGenreId;
             Movie.RatingId = this.SelectedRatingId;

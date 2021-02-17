@@ -17,7 +17,7 @@ namespace YellowBucket.Migrations
             modelBuilder
                 .UseIdentityColumns()
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("ProductVersion", "5.0.1");
+                .HasAnnotation("ProductVersion", "5.0.2");
 
             modelBuilder.Entity("YellowBucket.Models.Genre", b =>
                 {
@@ -97,7 +97,7 @@ namespace YellowBucket.Migrations
                         .UseIdentityColumn();
 
                     b.Property<string>("Description")
-                        .HasColumnType("varchar(256)");
+                        .HasColumnType("varchar(4096)");
 
                     b.Property<string>("Name")
                         .HasColumnType("varchar(32)");
@@ -105,6 +105,30 @@ namespace YellowBucket.Migrations
                     b.HasKey("RatingId");
 
                     b.ToTable("Rating");
+                });
+
+            modelBuilder.Entity("YellowBucket.Models.Review", b =>
+                {
+                    b.Property<int>("ReviewId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<string>("Description")
+                        .HasColumnType("varchar(256)");
+
+                    b.Property<int>("MovieId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("varchar(32)");
+
+                    b.HasKey("ReviewId");
+
+                    b.HasIndex("MovieId")
+                        .IsUnique();
+
+                    b.ToTable("Review");
                 });
 
             modelBuilder.Entity("YellowBucket.Models.Movie", b =>
@@ -126,9 +150,25 @@ namespace YellowBucket.Migrations
                     b.Navigation("Rating");
                 });
 
+            modelBuilder.Entity("YellowBucket.Models.Review", b =>
+                {
+                    b.HasOne("YellowBucket.Models.Movie", "Movie")
+                        .WithOne("Review")
+                        .HasForeignKey("YellowBucket.Models.Review", "MovieId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Movie");
+                });
+
             modelBuilder.Entity("YellowBucket.Models.Genre", b =>
                 {
                     b.Navigation("Movies");
+                });
+
+            modelBuilder.Entity("YellowBucket.Models.Movie", b =>
+                {
+                    b.Navigation("Review");
                 });
 
             modelBuilder.Entity("YellowBucket.Models.Rating", b =>
