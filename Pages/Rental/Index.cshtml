@@ -1,0 +1,84 @@
+﻿@page
+@model YellowBucket.Pages.Rental.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Rentals[0].Inventory)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rentals[0].Customer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rentals[0].Rental_KioskId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rentals[0].Rental_Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rentals[0].Return_KioskId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rentals[0].Return_Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rentals[0].Created_Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rentals[0].Updated_Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rentals[0].Deleted_Date)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Rentals) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Inventory.InventoryId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Customer.CustomerId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rental_KioskId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rental_Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Return_KioskId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Return_Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Created_Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Updated_Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Deleted_Date)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.RentalsId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.RentalsId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.RentalsId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

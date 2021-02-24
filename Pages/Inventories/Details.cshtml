@@ -1,0 +1,67 @@
+﻿@page
+@model YellowBucket.Pages.Inventories.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Inventory</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Inventory.Kiosk)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Inventory.Kiosk.KioskId)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Inventory.Movie)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Inventory.Movie.MovieId)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Inventory.Dvd)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Inventory.Dvd)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Inventory.BluRay)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Inventory.BluRay)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Inventory.IsRented)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Inventory.IsRented)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Inventory.Created_Date)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Inventory.Created_Date)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Inventory.Updated_Date)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Inventory.Updated_Date)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Inventory.Deleted_Date)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Inventory.Deleted_Date)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Inventory.InventoryId">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>
