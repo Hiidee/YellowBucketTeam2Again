@@ -31,19 +31,19 @@ namespace YellowBucket.Models
         [Column(TypeName = "varchar(128)")]
         public string Zip { get; set; }
 
-        public DateTime Created_Date
-        {
-            get { return _Created_Date; }
-            set { _Created_Date = DateTime.Now; }
-        }
+        //public DateTime Created_Date
+        //{
+        //    get { return _Created_Date; }
+        //    set { _Created_Date = DateTime.Now; }
+        //}
 
-        private DateTime _Created_Date;
+        //private DateTime _Created_Date;
 
-        [DataType(DataType.Date)]
-        public DateTime? Updated_Date { get; set; }
+        //[DataType(DataType.Date)]
+        //public DateTime? Updated_Date { get; set; }
 
-        [DataType(DataType.Date)]
-        public DateTime? Deleted_Date { get; set; }
+        //[DataType(DataType.Date)]
+        //public DateTime? Deleted_Date { get; set; }
 
 
 

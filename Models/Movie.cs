@@ -19,6 +19,8 @@ namespace YellowBucket.Models
         [Column(TypeName = "varchar(4096)")]
         public string Description { get; set; }
 
+       
+
         [Display(Name = "Running Time (minutes)")]
         public int Length { get; set; }
 

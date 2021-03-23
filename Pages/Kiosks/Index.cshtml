@@ -31,7 +31,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.Kiosk[0].Zip)
             </th>
-            <th>
+            @*<th>
                 @Html.DisplayNameFor(model => model.Kiosk[0].Created_Date)
             </th>
             <th>
@@ -39,7 +39,7 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Kiosk[0].Deleted_Date)
-            </th>
+            </th>*@
             <th></th>
         </tr>
     </thead>
@@ -64,7 +64,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Zip)
             </td>
-            <td>
+            @*<td>
                 @Html.DisplayFor(modelItem => item.Created_Date)
             </td>
             <td>
@@ -72,7 +72,7 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Deleted_Date)
-            </td>
+            </td>*@
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.KioskId">Edit</a> |
                 <a asp-page="./Details" asp-route-id="@item.KioskId">Details</a> |
