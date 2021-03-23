@@ -1,0 +1,67 @@
+﻿@page
+@model YellowBucket.Pages.Inventories.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Inventory</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Inventory.KioskId" class="control-label"></label>
+                <select asp-for="Inventory.KioskId" class ="form-control" asp-items="ViewBag.KioskId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Inventory.MovieId" class="control-label"></label>
+                <select asp-for="Inventory.MovieId" class ="form-control" asp-items="ViewBag.MovieId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Inventory.Dvd" class="control-label"></label>
+                <input asp-for="Inventory.Dvd" class="form-control" />
+                <span asp-validation-for="Inventory.Dvd" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Inventory.BluRay" class="control-label"></label>
+                <input asp-for="Inventory.BluRay" class="form-control" />
+                <span asp-validation-for="Inventory.BluRay" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Inventory.IsRented" class="control-label"></label>
+                <input asp-for="Inventory.IsRented" class="form-control" />
+                <span asp-validation-for="Inventory.IsRented" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Inventory.Created_Date" class="control-label"></label>
+                <input asp-for="Inventory.Created_Date" class="form-control" />
+                <span asp-validation-for="Inventory.Created_Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Inventory.Updated_Date" class="control-label"></label>
+                <input asp-for="Inventory.Updated_Date" class="form-control" />
+                <span asp-validation-for="Inventory.Updated_Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Inventory.Deleted_Date" class="control-label"></label>
+                <input asp-for="Inventory.Deleted_Date" class="form-control" />
+                <span asp-validation-for="Inventory.Deleted_Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

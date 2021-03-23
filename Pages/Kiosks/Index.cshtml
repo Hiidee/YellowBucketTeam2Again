@@ -1,0 +1,84 @@
+﻿@page
+@model YellowBucket.Pages.Kiosks.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Kiosk[0].Location)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Kiosk[0].Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Kiosk[0].Address2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Kiosk[0].City)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Kiosk[0].State)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Kiosk[0].Zip)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.Kiosk[0].Created_Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Kiosk[0].Updated_Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Kiosk[0].Deleted_Date)
+            </th>*@
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Kiosk) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Location)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.City)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.State)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Zip)
+            </td>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.Created_Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Updated_Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Deleted_Date)
+            </td>*@
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.KioskId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.KioskId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.KioskId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

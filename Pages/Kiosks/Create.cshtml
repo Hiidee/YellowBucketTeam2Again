@@ -1,0 +1,74 @@
+﻿@page
+@model YellowBucket.Pages.Kiosks.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Kiosk</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Kiosk.Location" class="control-label"></label>
+                <input asp-for="Kiosk.Location" class="form-control" />
+                <span asp-validation-for="Kiosk.Location" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Kiosk.Address" class="control-label"></label>
+                <input asp-for="Kiosk.Address" class="form-control" />
+                <span asp-validation-for="Kiosk.Address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Kiosk.Address2" class="control-label"></label>
+                <input asp-for="Kiosk.Address2" class="form-control" />
+                <span asp-validation-for="Kiosk.Address2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Kiosk.City" class="control-label"></label>
+                <input asp-for="Kiosk.City" class="form-control" />
+                <span asp-validation-for="Kiosk.City" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Kiosk.State" class="control-label"></label>
+                <input asp-for="Kiosk.State" class="form-control" />
+                <span asp-validation-for="Kiosk.State" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Kiosk.Zip" class="control-label"></label>
+                <input asp-for="Kiosk.Zip" class="form-control" />
+                <span asp-validation-for="Kiosk.Zip" class="text-danger"></span>
+            </div>
+            @*<div class="form-group">
+                <label asp-for="Kiosk.Created_Date" class="control-label"></label>
+                <input asp-for="Kiosk.Created_Date" class="form-control" />
+                <span asp-validation-for="Kiosk.Created_Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Kiosk.Updated_Date" class="control-label"></label>
+                <input asp-for="Kiosk.Updated_Date" class="form-control" />
+                <span asp-validation-for="Kiosk.Updated_Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Kiosk.Deleted_Date" class="control-label"></label>
+                <input asp-for="Kiosk.Deleted_Date" class="form-control" />
+                <span asp-validation-for="Kiosk.Deleted_Date" class="text-danger"></span>
+            </div>*@
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

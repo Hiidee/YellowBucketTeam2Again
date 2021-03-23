@@ -1,0 +1,60 @@
+﻿@page
+@model YellowBucket.Pages.WishList.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Wishlist[0].Customer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Wishlist[0].Movie)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Wishlist[0].Created_Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Wishlist[0].Updated_Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Wishlist[0].Deleted_Date)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Wishlist) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Customer.CustomerId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Movie.MovieId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Created_Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Updated_Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Deleted_Date)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.WishlistId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.WishlistId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.WishlistId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,78 @@
+﻿@page
+@model YellowBucket.Pages.Inventories.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Inventory[0].Kiosk)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Inventory[0].Movie)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Inventory[0].Dvd)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Inventory[0].BluRay)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Inventory[0].IsRented)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Inventory[0].Created_Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Inventory[0].Updated_Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Inventory[0].Deleted_Date)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Inventory) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Kiosk.KioskId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Movie.MovieId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dvd)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BluRay)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsRented)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Created_Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Updated_Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Deleted_Date)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.InventoryId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.InventoryId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.InventoryId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
