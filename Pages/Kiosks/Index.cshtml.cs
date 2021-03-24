@@ -19,7 +19,7 @@ namespace YellowBucket.Pages.Kiosks
             _context = context;
         }
 
-        public IList<Kiosk> Kiosk { get;set; }
+        public IList<Kiosk> Kiosk { get; set; }
 
         public async Task OnGetAsync()
         {

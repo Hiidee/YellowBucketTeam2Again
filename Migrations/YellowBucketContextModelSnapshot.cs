@@ -15,7 +15,6 @@ namespace YellowBucket.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .UseIdentityColumns()
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.3")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -179,20 +178,11 @@ namespace YellowBucket.Migrations
                     b.Property<string>("City")
                         .HasColumnType("varchar(128)");
 
-                    b.Property<DateTime>("Created_Date")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("Deleted_Date")
-                        .HasColumnType("datetime2");
-
                     b.Property<string>("Location")
                         .HasColumnType("varchar(128)");
 
                     b.Property<string>("State")
                         .HasColumnType("varchar(2)");
-
-                    b.Property<DateTime?>("Updated_Date")
-                        .HasColumnType("datetime2");
 
                     b.Property<string>("Zip")
                         .HasColumnType("varchar(128)");
