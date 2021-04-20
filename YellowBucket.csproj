@@ -20,4 +20,12 @@
     </None>
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="wwwroot\Pictures\American_Psycho_Cover.jpg" />
+    <None Include="wwwroot\Pictures\American_Sniper_Cover.jpg" />
+    <None Include="wwwroot\Pictures\Logan_Cover.jpg" />
+    <None Include="wwwroot\Pictures\Saw_Cover.jpg" />
+    <None Include="wwwroot\Pictures\The_Hangover_Cover.jpg" />
+  </ItemGroup>
+
 </Project>
