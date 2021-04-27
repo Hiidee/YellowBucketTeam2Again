@@ -19,8 +19,11 @@ namespace YellowBucket.Pages.Reviews
             _context = context;
         }
 
-        public IActionResult OnGet()
+        public int MovieId { get; set; }
+
+        public IActionResult OnGet(int id)
         {
+            MovieId = id;
             return Page();
         }
 
